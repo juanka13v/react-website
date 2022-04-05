@@ -3,13 +3,15 @@ import "./Navbar.css";
 import { SiAnaconda } from "react-icons/si";
 import { AiOutlineBars } from "react-icons/ai";
 import { RiCloseLine } from "react-icons/ri";
+import Button from "../UI/button/Button";
+import "../UI/button/Button.css";
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
 
   const toggleMenu = () => {
-    setShowMenu(!showMenu)
-  }
+    setShowMenu(!showMenu);
+  };
 
   return (
     <nav className="container navbar">
@@ -20,31 +22,32 @@ const Navbar = () => {
         </p>
       </div>
       <menu>
-        <ul className="nav-links" id={showMenu ? "nav-links-mobile": "nav-links-mobile-hide"}>
+        <ul
+          className="nav-links"
+          id={showMenu ? "nav-links-mobile" : "nav-links-mobile-hide"}
+        >
           <li>
             <a href="#">Home</a>
           </li>
           <li>
-            <a href="#">Features</a>
+            <a href="#features">Features</a>
           </li>
           <li>
-            <a href="#">Download</a>
+            <a href="#download">Download</a>
           </li>
           <li>
-            <a href="#">Subsribe</a>
+            <a href="#subscribe">Subsribe</a>
           </li>
           <li className="nav-btn">
-            <a href="#" className="btn btn-dark">
-              Get Started
-            </a>
+            <Button text={"Learn More"} btnClass={"btn-dark"} href={"#faq"} />
           </li>
         </ul>
       </menu>
       <div className="menu-icons" onClick={toggleMenu}>
         {showMenu ? (
-          <RiCloseLine color="#fff" size={30} />
+          <RiCloseLine color="#fff" size={30} cursor={"pointer"} />
         ) : (
-          <AiOutlineBars color="#fff" size={27} />
+          <AiOutlineBars color="#fff" size={27} cursor={"pointer"} />
         )}
       </div>
     </nav>

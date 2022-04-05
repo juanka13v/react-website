@@ -1,5 +1,6 @@
 import './App.css'
-import {Navbar, Header, Footer} from "./components"
+import {Navbar, Header, Features, Download, Subscribe, Faq, Footer} from "./components"
+
 
 function App() {
 
@@ -9,6 +10,11 @@ function App() {
         <Navbar />
         <Header />
       </header>
+      <Features />
+      <Download />
+      <Subscribe />
+      <Faq />
+      <Footer />
     </main>
   )
 }
